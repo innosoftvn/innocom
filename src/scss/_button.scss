@@ -1,0 +1,111 @@
+%btn-base {
+  display: inline-block;
+  padding: $btn-padding/3 $btn-padding;
+  border: $btn-default-border;
+  @include border-radius($btn-border-radius);
+  color: $btn-default-color;
+  text-decoration: none;
+  text-align: center;
+  background: transparent;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.btn {
+  @extend %btn-base;
+  background-color: $btn-default-back;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($btn-default-back,2%);
+    color: $btn-default-color;
+  }
+}
+
+.btn-link {
+  @extend %btn-base;
+  border-color: transparent;
+  color: $link-color;
+}
+
+.btn-primary {
+  @extend %btn-base;
+  border-color: darken($primary, 5%);
+  background-color: $primary;
+  color: #ffffff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($primary, 5%);
+    color: #ffffff;
+  }
+}
+
+.btn-success {
+  @extend %btn-base;
+  border-color: darken($success, 5%);
+  background-color: $success;
+  color: #ffffff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($success, 5%);
+    color: #ffffff;
+  }
+}
+
+.btn-warning {
+  @extend %btn-base;
+  border-color: darken($warning, 5%);
+  background-color: $warning;
+  color: #ffffff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($warning, 5%);
+    color: #ffffff;
+  }
+}
+
+.btn-info {
+  @extend %btn-base;
+  border-color: darken($info, 5%);
+  background-color: $info;
+  color: #ffffff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($info, 5%);
+    color: #ffffff;
+  }
+}
+
+.btn-danger {
+  @extend %btn-base;
+  border-color: darken($danger, 5%);
+  background-color: $danger;
+  color: #ffffff;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($danger, 5%);
+    color: #ffffff;
+  }
+}
+
+.btn-sm {
+  font-size: floor($font-size*0.75);
+  padding: $btn-padding/4 $btn-padding/2;
+}
+
+.btn-lg {
+  font-size: $font-size*1.2;
+  padding: $btn-padding/2 $btn-padding*1.4;
+}

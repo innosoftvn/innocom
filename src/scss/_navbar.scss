@@ -1,0 +1,138 @@
+/* main menu styles */
+
+.navbar,.navbar ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.navbar {
+    height: $navbar-height;
+    position:relative;
+}
+.navbar ul {
+    display: none;
+    position:absolute;
+    top: 100%;
+    min-width: 160px;
+    z-index: 1;
+    background-color: $subbar-back-color;
+    @include box-shadow($subbar-box-shadow);
+}
+.navbar ul ul {
+    display: none;
+    left: 100%;
+    position:absolute;
+    top:0;
+    width:auto;
+}
+.navbar li {
+    height: 100%;
+    float:left;
+    position:relative;
+}
+.navbar li a {
+    color: $navbar-text-color;
+    float:left;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    padding: $subbar-padding;
+}
+
+.navbar > li > a {
+    overflow:hidden;
+    padding: 6px 12px;
+}
+.navbar li a:not(:only-child):active {
+    pointer-events: none;
+}
+.navbar ul li,
+.navbar ul li a {
+    width: 100%;
+}
+.navbar li.header {
+    text-transform: uppercase;
+    font-size: 10px;
+    background-color: $subbar-back-header;
+    color: $subbar-text-header;
+    font-weight: bold;
+    padding: 3px 15px;
+}
+
+.navbar li.diliver {
+    height: 1px;
+    margin: 3px 0;
+    overflow: hidden;
+    background-color: $subbar-diliver;
+}
+
+.navbar li a.active {
+    background-color: $subbar-back-active;
+    color: $navbar-back-hover;
+
+    &:hover {
+        background-color: $subbar-back-active;
+        color: $navbar-back-hover;
+    }
+}
+
+/*hover styles*/
+.navbar li:hover > a {
+    background-color: $navbar-back-hover;
+    color: $navbar-text-hover;
+}
+
+/*focus styles*/
+.navbar li a:focus {
+    outline-width:0;
+}
+
+/*popups*/
+.navbar li a:active + ul,.navbar li a:focus + ul,.navbar li ul:hover,
+.navbar ul li a:active + ul,.navbar ul li a:focus + ul,.navbar ul li ul:hover {
+    display: block;
+}
+
+/*Navbar-right*/
+.navbar.pull-right ul {
+    right: 0;
+}
+
+.navbar.pull-right ul ul {
+    left: auto;
+    right: 100%;
+}
+
+// Caret
+a.caret,
+.btn.caret {
+    padding-right: 25px !important;
+}
+
+.caret::after {
+    content: '';
+    position: absolute;
+    border: 5px solid transparent;
+}
+
+.caret.caret-left::after {
+    top: 35%;
+    right: 5px;
+    border-left-color: #aaa;
+}
+
+.caret.caret-top::after {
+    top: 45%;
+    right: 10px;
+    border-top-color: #aaa;
+}
+.caret.caret-right::after {
+    top: 35%;
+    right: 5px;
+    border-right-color: #aaa;
+}
+.caret.caret-bottom::after {
+    top: 45%;
+    right: 10px;
+    border-bottom-color: #aaa;
+}
