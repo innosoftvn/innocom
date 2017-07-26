@@ -6,7 +6,7 @@
             <slot></slot>
         </thead>
     </table>
-    <scroll>
+    <v-scroll>
         <table>
             <tbody>
                 <tr>
@@ -26,14 +26,14 @@
                 </tr>
             </tbody>
         </table>
-    </scroll>
+    </v-scroll>
 </div>
 </template>
 <script>
 import Vue from 'vue'
 import Scroll from './Scroll.vue'
 
-Vue.component('column', {
+Vue.component('v-col', {
     template: '<th><slot></slot></th>',
     props: {
         type: 'text'
@@ -42,7 +42,7 @@ Vue.component('column', {
 const $ = require('innoajax');
 export default {
     components: {
-        Scroll
+        'v-scroll': Scroll
     },
     props: {
         url: null,
@@ -55,7 +55,7 @@ export default {
         root: null
     }),
     mounted() {
-        this.fetch();
+      if (this.url) this.fetch();
     },
     methods: {
         fetch() {
@@ -70,4 +70,11 @@ export default {
 }
 </script>
 <style lang="scss">
+.s-header thead{
+  position: relative;
+}
+
+.s-body {
+  padding-right: 17px;
+}
 </style>

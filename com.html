@@ -25,47 +25,72 @@
         </div>
         <h2>Scrollbar</h2>
         <div class="row">
-            <div class="col-2">
+            <div class="col-2-md">
                 <div class="panel" style="height: 150px">
-                    <scroll>
+                    <v-scroll>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
                             specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                             passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </scroll>
+                    </v-scroll>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2-md">
                 <div class="panel" style="height: 100px">
-                    <scroll>
+                    <v-scroll>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
                             specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                             passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </scroll>
+                    </v-scroll>
                 </div>
             </div>
-            <div class="col-2">
+            <div class="col-2-md">
                 <div class="panel">
-                    <scroll>
+                    <v-scroll>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type
                             specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                             passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-                    </scroll>
+                    </v-scroll>
                 </div>
             </div>
         </div>
 
         <h2>Grid</h2>
         <div class="row">
-            <div class="col-6">
-                <grid url="http://localhost/test/public/api/users" per-page=15>
-                    <column name="id">1</column>
-                    <column name="name">2</column>
-                    <column name="email">3</column>
-                </grid>
+            <div class="col-6-md">
+                <v-grid per-page=15>
+                    <v-col name="id">1</v-col>
+                    <v-col name="name">2</v-col>
+                    <v-col name="email">3</v-col>
+                </v-grid>
             </div>
         </div>
+
+        <h2>Form</h2>
+        <div class="row">
+            <div class="col-6-md">
+              <div class="panel">
+                <v-form>
+                  <v-input label="Username" name="username"></v-input>
+                  <v-input label="Fullname" name="fullname"></v-input>
+                  <v-input label="Password" name="password" type="password"></v-input>
+                  <v-input label="Email" name="email" type="email"></v-input>
+                  <v-select label="Select Single" name="pet1" init="Mèo,Chó,Cá Sấu,Đà Điểu,Bọ Cánh Cứng"></v-select>
+                  <v-select label="Select Multiple" name="pet2" init="Mèo,Chó,Cá Sấu,Đà Điểu,Bọ Cánh Cứng" multiple></v-select>
+                  <v-tag label="Tag Input" name="pet3"></v-tag>
+                  <v-date label="DatePicker" name="birthday"></v-date>
+                  <v-date label="RangePicker" name="point" range></v-date>
+                  <v-mask label="InputMask" name="workday" mask="11/11/1111" placeholder="dd/mm/yyyy"></v-mask>
+                  <v-mask label="InputMask" name="workday" mask="\+\1 (111) 111-1111" placeholder-char="-" placeholder="Phone number" type="tel"></v-mask>
+                  <v-editor label="Editor" name="note" type="document" toolbar="Basic"></v-editor>
+                </v-form>
+              </div>
+            </div>
+        </div>
+
+        <p></p>
     </div>
 
+    <script src="https://cdn.ckeditor.com/4.7.1/full-all/ckeditor.js"></script>
     <script src="dist/app.js"></script>
 </body>
 

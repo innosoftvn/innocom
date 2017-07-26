@@ -17,6 +17,10 @@ form {
     @include border-radius($input-border-radius);
     border: $input-border;
     margin: 0;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   input[type="submit"] {
@@ -29,6 +33,23 @@ form {
     vertical-align: middle;
     @include box-shadow(none);
     @include border-radius(0);
+  }
+
+  select {
+    &::-ms-expand { /* for IE 11 */
+      display: none;
+    }
+
+    option {
+      padding:5px;
+    }
+  }
+
+  select[multiple] {
+    height: 100px;
+    option {
+      padding: 3px 12px;
+    }
   }
 
 }

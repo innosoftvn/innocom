@@ -3,7 +3,7 @@
     <div class="s-content" ref="content">
         <slot></slot>
     </div>
-    <div class="s-outbar"><div class="s-bar" ref="scroll"></div></div>
+    <div class="s-bar" ref="scroll"></div>
 </div>
 </template>
 <script>
@@ -45,8 +45,8 @@ export default {
     position: relative;
     overflow: hidden;
 
-    .s-outbar:active,
-    &:hover .s-outbar {
+    .s-bar:active,
+    &:hover .s-bar {
         opacity: 1;
     }
 
@@ -57,25 +57,22 @@ export default {
         overflow: auto;
     }
 
-    .s-outbar {
+    .s-bar {
         opacity: 0;
         position: absolute;
         top: 0;
         right: 0;
         width: 5px;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
         -webkit-transition: opacity 0.2s ease-in-out;
         -moz-transition: opacity 0.2s ease-in-out;
         -o-transition: opacity 0.2s ease-in-out;
         transition: opacity 0.2s ease-in-out;
 
-        .s-bar {
-            position: absolute;
-            top: 0;
-            width: 5px;
-            background-color: rgba(0, 0, 0, 0.3);
-            cursor: pointer;
+        &:active,
+        &:hover {
+            opacity: 1;
         }
     }
 }

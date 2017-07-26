@@ -10,7 +10,23 @@ module.exports = {
         filename: 'app.js'
     },
     module: {
-        rules: [{
+        rules: [
+          {
+            test: /\.less$/,
+            loader: ExtractTextPlugin.extract({
+              use: [{
+                    loader: "css-loader"
+                }, {
+                    loader: "less-loader"
+                },
+                {
+                  loader: "postcss-loader"
+                }],
+                // use style-loader in development
+                fallback: "style-loader"
+            })
+          },
+          {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract({
                     use: [{
@@ -28,7 +44,8 @@ module.exports = {
             },
             {
                 test: /\.js$/,
-                loader: 'babel-loader'
+                loader: 'babel-loader',
+                exclude: /node_modules/
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,

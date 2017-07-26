@@ -1,7 +1,7 @@
 {
   "name": "innocom",
   "description": "InnoSoft component based on VueJS",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "author": "Theodore <hoquangthaiholy@gmail.com> (https://www.innosoft.com.vn)",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
@@ -19,11 +19,14 @@
     "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
     "innoajax": "^1.0.0",
+    "less-loader": "^4.0.5",
     "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "vue": "^2.4.2",
     "vue-loader": "^12.2.2",
+    "vue-masked-input": "^0.5.2",
     "vue-template-compiler": "^2.4.2",
     "webpack": "^3.3.0",
     "webpack-dev-server": "^2.5.1"
